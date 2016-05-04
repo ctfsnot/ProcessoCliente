@@ -5,17 +5,31 @@
  */
 package processocliente;
 
+import interfaces.InterfaceServidor;
+import java.lang.management.ManagementFactory;
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+
 /**
  *
  * @author a1144847
  */
 public class ProcessoCliente {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    static Registry servidorNomes;
+    static InterfaceServidor server;
+    static String pid;
+    
+    public static void main(String[] args) throws RemoteException, NotBoundException, MalformedURLException {
+        
+        pid = ManagementFactory.getRuntimeMXBean().getName();
+        servidorNomes = LocateRegistry.getRegistry("localhost", 8888);
+        server = (InterfaceServidor)servidorNomes.lookup("ServerEngine");
+        
     }
     
 }
