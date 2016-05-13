@@ -228,10 +228,10 @@ public class ProcessoCliente{
                             
                             //coletar cidade de origem
                             pi = 3;
-                            pf = passagem.indexOf(" para");
+                            pf = passagem.indexOf(" Para");
                             origem = passagem.substring(pi, pf);
                             
-                            pi = passagem.indexOf("para")+5;
+                            pi = passagem.indexOf("Para")+5;
                             pf = passagem.indexOf(" -");
                             destino = passagem.substring(pi, pf);
                             

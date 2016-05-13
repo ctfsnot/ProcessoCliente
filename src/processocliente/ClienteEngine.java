@@ -20,13 +20,14 @@ public class ClienteEngine extends UnicastRemoteObject implements InterfaceClien
     static ArrayList<String> voosComprados = new ArrayList();
     static ArrayList<String> hospedagensCompradas = new ArrayList();
     
-    public ClienteEngine()throws RemoteException{
+    public ClienteEngine() throws RemoteException{
         
     }
-    
+
     @Override
-    public void notificaInteresse() throws RemoteException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public synchronized String notificaInteresse(String mensagem) throws RemoteException {
+        System.out.println(mensagem);
+        return "";
     }
     
 }
