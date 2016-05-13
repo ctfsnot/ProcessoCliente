@@ -13,8 +13,9 @@ import java.rmi.RemoteException;
  * @author a1144847
  */
 public interface InterfaceServidor extends Remote {
-    public void compraPassagem() throws RemoteException;
-    public void compraHospedagem() throws RemoteException;
+    public boolean compraPassagem(int passagemId) throws RemoteException;
+    public boolean compraHospedagem(int hospedagemId) throws RemoteException;
     public void registraInteresse(String cliente, String tipo_interesse) throws RemoteException;
     public Object[] listaPassagens() throws RemoteException;
+    public Object[] listaHospedagens() throws RemoteException;
 }
