@@ -111,12 +111,15 @@ public class ProcessoCliente{
                     scanner.nextLine();
                     System.out.print("\nDigite os 16 digitos do cartão: ");
                     opt4 = scanner.nextLine();
+                    System.out.print("\nParcelas[0-6x]: ");
+                    String parcelas = scanner.nextLine();
                     
                     compra = passagem + "\n" 
                             + "Saída: " + dIda + "\n"
                             + "Retorno: " + dVolta + "\n"
                             + "Qtde. Passageiros: " + opt3 + "\n"
-                            + "Dados do Cartão : " + opt4 + "\n\n";
+                            + "Dados do Cartão : " + opt4 + "\n"
+                            + "Número de parcelas : "+ parcelas+ "\n\n";
                     
                     if(server.compraPassagem(opt1)){
                         System.out.println("\n*************** Dados da compra ***************\n");
@@ -172,13 +175,16 @@ public class ProcessoCliente{
                     scanner.nextLine();
                     System.out.print("\nDigite os 16 digitos do cartão: ");
                     opt2 = scanner.nextLine();
+                    System.out.print("\nParcelas[0-6x]: ");
+                    String parcel = scanner.nextLine();
                     
                     compra = hospedagem + "\n" 
                             + "Entrada: " + dEntrada + "\n"
                             + "Saída: " + dSaida + "\n"
                             + "N. de Quartos: " + opt3 + "\n"
                             + "Qtde. hospedes: " + opt5 + "\n"
-                            + "Dados do Cartão : " + opt2 + "\n\n";
+                            + "Dados do Cartão : " + opt2 + "\n"
+                            +"Número de parcelas : "+ parcel + "\n\n";
                     
                     if(server.compraHospedagem(opt1)){
                         System.out.println("\n*************** Dados da compra ***************\n");
@@ -190,8 +196,19 @@ public class ProcessoCliente{
                     }
                     break;
                 case "3":
+                    System.out.println("\n\n****Passagens já adquiridas pelo cliente**** ");
+                    for(int i=0; i<ClienteEngine.voosComprados.size(); i++){
+                        System.out.println(ClienteEngine.voosComprados.get(i)+"\n\n");
+                    }
+                    System.out.println("\n\n");
+                    
                     break;
                 case "4":
+                    System.out.println("\n\n****Hospedagens já adquiridas pelo cliente**** ");
+                    for(int i=0; i<ClienteEngine.hospedagensCompradas.size(); i++){
+                        System.out.println(ClienteEngine.hospedagensCompradas.get(i)+"\n\n");
+                    }
+                    System.out.println("\n\n");
                     break;
                     //-------------------------------------CTF-----------------------------------------
                 case "5":
