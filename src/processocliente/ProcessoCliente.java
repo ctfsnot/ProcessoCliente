@@ -60,7 +60,7 @@ public class ProcessoCliente{
             MENU1 += "3. Listar passagens adquiridas\n";
             MENU1 += "4. Listar passagens adquiridas\n";
             MENU1 += "5. Registrar interesse\n";
-            MENU1 += "Opção: ";
+            MENU1 += "\nOpção: ";
             System.out.print(MENU1);
 
             int opt1, opt3, opt5;
@@ -70,6 +70,7 @@ public class ProcessoCliente{
                 
                 case "1":
                     String passagem = "";
+                    System.out.print("\n");
                     for (int i = 0; i < server.listaPassagens().length; i++){
                         passagem = (String)server.listaPassagens()[i];
                         System.out.println((i+1) + ". " + passagem );
@@ -124,7 +125,7 @@ public class ProcessoCliente{
                     if(server.compraPassagem(opt1)){
                         System.out.println("\n*************** Dados da compra ***************\n");
                         System.out.print(compra);
-                        System.out.println("\n***********************************************\n");
+                        System.out.println("***********************************************\n");
                         clienteEngine.voosComprados.add(compra);
                     } else {
                         System.out.println("\n\nNão foi possivel efetuar a compra. Tente novamente.\n");
@@ -134,7 +135,7 @@ public class ProcessoCliente{
                 case "2":
                     String hospedagem = "";
                     String quartos = "";
-                    
+                    System.out.print("\n");
                     for (int i = 0; i < server.listaHospedagens().length; i++){
                         hospedagem = (String)server.listaHospedagens()[i];
                         System.out.println((i+1) + ". " + hospedagem );
@@ -189,7 +190,7 @@ public class ProcessoCliente{
                     if(server.compraHospedagem(opt1)){
                         System.out.println("\n*************** Dados da compra ***************\n");
                         System.out.print(compra);
-                        System.out.println("\n***********************************************\n");
+                        System.out.println("***********************************************\n");
                         clienteEngine.hospedagensCompradas.add(compra);
                     } else {
                         System.out.println("\n\nNão foi possivel efetuar a compra. Tente novamente.\n");
@@ -200,7 +201,7 @@ public class ProcessoCliente{
                     for(int i=0; i<ClienteEngine.voosComprados.size(); i++){
                         System.out.println(ClienteEngine.voosComprados.get(i)+"\n\n");
                     }
-                    System.out.println("\n\n");
+                    System.out.print("\n");
                     
                     break;
                 case "4":
@@ -208,7 +209,7 @@ public class ProcessoCliente{
                     for(int i=0; i<ClienteEngine.hospedagensCompradas.size(); i++){
                         System.out.println(ClienteEngine.hospedagensCompradas.get(i)+"\n\n");
                     }
-                    System.out.println("\n\n");
+                    System.out.print("\n");
                     break;
                     //-------------------------------------CTF-----------------------------------------
                 case "5":
@@ -216,7 +217,7 @@ public class ProcessoCliente{
                     MENU2 += "Selecione a oferta em que você tem interesse: \n\n";
                     MENU2 += "1. Oferta de passagem\n";
                     MENU2 += "2. Oferta de hospedagem\n";
-                    MENU2 += "Opção: ";
+                    MENU2 += "\nOpção: ";
                     System.out.print(MENU2);
                     
                     int opt_oferta1, opt_oferta2;
