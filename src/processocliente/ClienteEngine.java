@@ -10,20 +10,19 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
-/**
- *
- * @author Pepo
- */
+
 public class ClienteEngine extends UnicastRemoteObject implements InterfaceCliente{
     
-    
+    //array para guardar as passagens compradas
     static ArrayList<String> voosComprados = new ArrayList();
+    //array para guardar as hospedagens compradas
     static ArrayList<String> hospedagensCompradas = new ArrayList();
     
     public ClienteEngine() throws RemoteException{
         
     }
-
+    //método que servidor usa para notificar o cliente, informando que uma opção melhor
+    //foi cadastrada
     @Override
     public synchronized String notificaInteresse(String mensagem) throws RemoteException {
         System.out.println(mensagem);
