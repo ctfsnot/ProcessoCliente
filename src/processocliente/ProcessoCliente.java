@@ -38,7 +38,7 @@ public class ProcessoCliente{
         
         clienteEngine = new ClienteEngine();
         
-        servidorNomes.bind(pid, clienteEngine);
+        //servidorNomes.bind(pid, clienteEngine);
         
         if(server != null){
             menu();
@@ -257,7 +257,7 @@ public class ProcessoCliente{
                             pf = passagem.length();
                             preco = passagem.substring(pi, pf);
                             
-                            server.registraInteresse(pid, origem, destino, Float.parseFloat(preco));
+                            server.registraInteresse(clienteEngine, origem, destino, Float.parseFloat(preco));
                             
                             break;
                         case "2":
@@ -291,7 +291,7 @@ public class ProcessoCliente{
                             pf = hospedagem.length();
                             prec = hospedagem.substring(pi, pf);
                             
-                            server.registraInteresse(pid, local, Integer.parseInt(quart), Float.parseFloat(prec));
+                            server.registraInteresse(clienteEngine, local, Integer.parseInt(quart), Float.parseFloat(prec));
                             break;
                         default:
                             System.out.println("Opção inválida");
