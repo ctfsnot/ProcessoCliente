@@ -282,7 +282,8 @@ public class ProcessoCliente{
                             pi = passagem.indexOf("$:")+3;
                             pf = passagem.length();
                             preco = passagem.substring(pi, pf);
-                            
+                            //o interesse é registrado no servidor usando os valores coletados
+                            //anteriormente como parâmetro
                             server.registraInteresse(clienteEngine, origem, destino, Float.parseFloat(preco));
                             
                             break;
@@ -317,7 +318,8 @@ public class ProcessoCliente{
                             pi = hospedagem.indexOf("$:")+3;
                             pf = hospedagem.length();
                             prec = hospedagem.substring(pi, pf);
-                            
+                            //o interesse é registrado no servidor usando os valores coletados
+                            //anteriormente como parâmetro
                             server.registraInteresse(clienteEngine, local, Integer.parseInt(quart), Float.parseFloat(prec));
                             break;
                         default:

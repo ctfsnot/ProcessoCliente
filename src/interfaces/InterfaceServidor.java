@@ -20,8 +20,11 @@ public interface InterfaceServidor extends Remote {
     public boolean compraPassagem(int passagemId) throws RemoteException;
     //método para a compra de hospedagem
     public boolean compraHospedagem(int hospedagemId) throws RemoteException;
+    //método para registrar interesse em passagens
     public boolean registraInteresse(InterfaceCliente cliente, String origem, String destino, float preco) throws RemoteException;
+    //método para registrar interesse em hospedagens
     public boolean registraInteresse(InterfaceCliente cliente, String local, int quartos, float preco) throws RemoteException;
+    //método para listar as passagens
     public Object[] listaPassagens() throws RemoteException;
     //método para listar as hospedagens
     public Object[] listaHospedagens() throws RemoteException;
