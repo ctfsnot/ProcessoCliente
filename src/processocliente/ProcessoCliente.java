@@ -24,7 +24,7 @@ import java.util.Scanner;
  * @author a1144847
  * 
  * O ProcessoCliente engloba o menu do programa cliente, registra o cliente no
- * servidor de nomes e se comunica com o servidor para o uso remoto dos métodos
+ * serviço de nomes e se comunica com o servidor para o uso remoto dos métodos
  */
 public class ProcessoCliente{
 
@@ -35,7 +35,7 @@ public class ProcessoCliente{
     
     public static void main(String[] args) throws RemoteException, NotBoundException, MalformedURLException, AlreadyBoundException {
         
-        //se comunica com o servidor de nomes e adiciona o pid do cliente a ele
+        //se comunica com o serviço de nomes e adiciona o cliente a ele
         pid = ManagementFactory.getRuntimeMXBean().getName();
         servidorNomes = LocateRegistry.getRegistry("localhost", 8888);
         server = (InterfaceServidor)servidorNomes.lookup("ServerEngine");
