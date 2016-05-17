@@ -11,12 +11,18 @@ import java.rmi.RemoteException;
 /**
  *
  * @author a1144847
+ * 
+ * Nessa interface são definidos todos os métodos que poderão ser acessados via
+ * RMI pelo cliente.
  */
 public interface InterfaceServidor extends Remote {
+    //método para a compra de passagens
     public boolean compraPassagem(int passagemId) throws RemoteException;
+    //método para a compra de hospedagem
     public boolean compraHospedagem(int hospedagemId) throws RemoteException;
     public boolean registraInteresse(InterfaceCliente cliente, String origem, String destino, float preco) throws RemoteException;
     public boolean registraInteresse(InterfaceCliente cliente, String local, int quartos, float preco) throws RemoteException;
     public Object[] listaPassagens() throws RemoteException;
+    //método para listar as hospedagens
     public Object[] listaHospedagens() throws RemoteException;
 }
