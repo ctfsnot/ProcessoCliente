@@ -23,8 +23,8 @@ import java.util.Scanner;
  *
  * @author a1144847
  * 
- * O ProcessoCliente emgloba o menu do programa cliente, registra o cliente no
- * servidor de nomes e se comunica com o serverEngine para o uso remoto dos métodos
+ * O ProcessoCliente engloba o menu do programa cliente, registra o cliente no
+ * servidor de nomes e se comunica com o servidor para o uso remoto dos métodos
  */
 public class ProcessoCliente{
 
